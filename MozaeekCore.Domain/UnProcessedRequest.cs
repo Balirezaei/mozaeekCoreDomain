@@ -7,9 +7,9 @@ namespace MozaeekCore.Domain
     {
         public DateTime CreateDateTime { get; private set; }
         public int Id { get; private set; }
-        public string Title { get; set; }
-        public string Summery { get; set; }
-        public bool IsProcessed { get; set; }
+        public string Title { get; private set; }
+        public string Summery { get; private set; }
+        public bool IsProcessed { get; private set; }
         protected UnProcessedRequest() { }
         public UnProcessedRequest(string title, string summery)
         {

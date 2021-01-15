@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MozaeekCore.ApplicationService\MozaeekCore.ApplicationService.csproj" />
+    <ProjectReference Include="..\MozaeekCore.Core\MozaeekCore.Core.csproj" />
+    <ProjectReference Include="..\MozaeekCore.Facade.Contract\MozaeekCore.Facade.Contract.csproj" />
+  </ItemGroup>
+
 </Project>
