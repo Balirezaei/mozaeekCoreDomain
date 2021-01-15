@@ -1,4 +1,5 @@
-﻿using MozaeekCore.Domain;
+﻿using System.Linq;
+using MozaeekCore.Domain;
 
 namespace MozaeekCore.Persistense.EF.Repository
 {
@@ -13,6 +14,11 @@ namespace MozaeekCore.Persistense.EF.Repository
         public void Add(UnProcessedRequest unProcessedRequest)
         {
             _context.UnProcessedRequests.Add(unProcessedRequest);
+        }
+
+        public UnProcessedRequest Find(int id)
+        {
+            return _context.UnProcessedRequests.SingleOrDefault(m => m.Id==id);
         }
     }
 }

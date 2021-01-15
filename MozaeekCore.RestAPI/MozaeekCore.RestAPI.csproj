@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MozaeekCore.ApplicationService.Contract\MozaeekCore.ApplicationService.Contract.csproj" />
     <ProjectReference Include="..\MozaeekCore.ApplicationService\MozaeekCore.ApplicationService.csproj" />
+    <ProjectReference Include="..\MozaeekCore.Facade.Query\MozaeekCore.Facade.Query.csproj" />
     <ProjectReference Include="..\MozaeekCore.LogManagement\MozaeekCore.LogManagement.csproj" />
     <ProjectReference Include="..\MozaeekCore.Persistense.EF\MozaeekCore.Persistense.EF.csproj" />
   </ItemGroup>

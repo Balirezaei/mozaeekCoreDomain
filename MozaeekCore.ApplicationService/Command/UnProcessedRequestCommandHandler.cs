@@ -25,7 +25,6 @@ namespace MozaeekCore.ApplicationService
             {
                 Id = unProcessedRequest.Id
             };
-
         }
     }
 }

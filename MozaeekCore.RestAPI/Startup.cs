@@ -38,14 +38,12 @@ namespace MozaeekCore.RestAPI
             }));
             services.AddFrameworkServices();
             services.AddCommandHandlerServices();
+            services.AddQueryHandlerServices();
             services.AddAuthorizationServices(this.Configuration);
-          
-            
+
             services.AddDbContext<CoreDomainContext>(options =>
                 options.UseInMemoryDatabase(databaseName: "CoreDomainContext"));
-
-
-
+            
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllers();
