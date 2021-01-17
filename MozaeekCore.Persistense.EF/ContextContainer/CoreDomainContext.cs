@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MozaeekCore.Domain;
+using MozaeekCore.Domain.ExecutiveTechs;
 
 namespace MozaeekCore.Persistense.EF
 {
@@ -22,5 +23,6 @@ namespace MozaeekCore.Persistense.EF
         
         //entities
         public DbSet<UnProcessedRequest> UnProcessedRequests { get; set; }
+        public DbSet<ExecutiveTechnician> ExecutiveTechnicians { get; set; }
     }
 }

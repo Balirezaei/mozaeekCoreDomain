@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MozaeekCore.Core.Base;
 using MozaeekCore.Core.CommandHandler;
 
@@ -22,5 +23,14 @@ namespace MozaeekCore.Core.CommandBus
             return handler.Handle(command);
         }
 
+        public Task<TResult> DispatchAsync<T, TResult>(T command) where T : Command
+        {
+            IBaseAsyncCommandHandler<T, TResult> handler = null;
+            handler = (IBaseAsyncCommandHandler<T, TResult>)services.GetService((typeof(AuthorizeCommandAsyncHandlerDecorator<T, TResult>)));
+            //            handler = (IBaseCommandHandler<T, TResult>)services.GetService((typeof(LoggingHandlerDecorator<T, TResult>)));
+            var logManagement = (ILogManagement)services.GetService(typeof(ILogManagement));
+            handler = new CatchErrorCommandHandlerDecorator<T, TResult>(new AsyncLoggingHandlerDecorator<T, TResult>(handler, logManagement));
+            return handler.HandleAsync(command);
+        }
     }
 }

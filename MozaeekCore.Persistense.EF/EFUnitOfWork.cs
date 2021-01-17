@@ -1,4 +1,5 @@
 ﻿using MozaeekCore.Core;
+using System.Threading.Tasks;
 
 namespace MozaeekCore.Persistense.EF
 {
@@ -16,6 +17,9 @@ namespace MozaeekCore.Persistense.EF
             _context.SaveChanges();
         }
 
-        
+        public Task CommitAsync()
+        {
+            return _context.SaveChangesAsync();
+        }
     }
 }

@@ -11,8 +11,9 @@ namespace MozaeekCore.Core.CommandHandler
             _log = log;
             _next = next;
         }
+       
 
-        public IBaseCommandHandler<T, TResult> _next { get; }
+        public IBaseCommandHandler<T, TResult> _next { get; }        
 
         public TResult Handle(T cmd)
         {
@@ -21,6 +22,7 @@ namespace MozaeekCore.Core.CommandHandler
             return _next.Handle(cmd);
         }
 
+       
     }
 
 }

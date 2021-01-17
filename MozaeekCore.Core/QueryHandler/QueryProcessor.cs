@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace MozaeekCore.Core.QueryHandler
 {
@@ -21,6 +22,12 @@ namespace MozaeekCore.Core.QueryHandler
         {
             var handler = (IBaseQueryHandler<TQuery, TResult>)services.GetService(typeof(IBaseQueryHandler<TQuery, TResult>));
             return Convert.ToBoolean(handler);
+        }
+
+        public Task<TResult> ProcessAsync<TQuery, TResult>(TQuery query)
+        {
+            var handler = (IBaseAsyncQueryHandler<TQuery, TResult>)services.GetService(typeof(IBaseAsyncQueryHandler<TQuery, TResult>));
+            return handler.HandleAsync(query);
         }
     }
 }
