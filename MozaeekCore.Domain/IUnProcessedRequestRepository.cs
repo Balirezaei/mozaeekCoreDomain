@@ -1,8 +1,10 @@
-﻿namespace MozaeekCore.Domain
+﻿using System.Threading.Tasks;
+
+namespace MozaeekCore.Domain
 {
     public interface IUnProcessedRequestRepository
     {
         void Add(UnProcessedRequest unProcessedRequest);
-        UnProcessedRequest Find(int id);
+        Task<UnProcessedRequest> Find(int id);
     }
 }

@@ -25,7 +25,7 @@ namespace MozaeekCore.RestAPI.Controllers
         }
         
         [HttpGet]
-        public UnProcessedRequestDto GetById(int id)
+        public Task<UnProcessedRequestDto> GetById(int id)
         {
             return _processedRequestQueryFacade.GetProcessedRequestById(id);
         }

@@ -13,7 +13,7 @@ namespace MozaeekCore.RestAPI.Bootstrap
     {
         public static IServiceCollection AddQueryHandlerServices(this IServiceCollection services)
         {
-            services.AddScoped<IBaseQueryHandler<FindByKey, UnProcessedRequestDto>, GetUnProcessedRequestByIdQueryHandler>();
+            services.AddScoped<IBaseAsyncQueryHandler<FindByKey, UnProcessedRequestDto>, GetUnProcessedRequestByIdQueryHandler>();
             services.AddScoped<IUnProcessedRequestQueryFacade, UnProcessedRequestQueryFacade>();
 
             services.AddScoped<IBaseAsyncQueryHandler<FindByKey, ExecutiveTechnicianDto>, GetExecutiveTechnicianByIdQueryHandler>();

@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using MozaeekCore.Domain;
 
 namespace MozaeekCore.Persistense.EF.Repository
@@ -13,12 +15,12 @@ namespace MozaeekCore.Persistense.EF.Repository
         }
         public void Add(UnProcessedRequest unProcessedRequest)
         {
-            _context.UnProcessedRequests.Add(unProcessedRequest);
+            _context.UnProcessedRequests.AddAsync(unProcessedRequest);
         }
 
-        public UnProcessedRequest Find(int id)
+        public Task<UnProcessedRequest> Find(int id)
         {
-            return _context.UnProcessedRequests.SingleOrDefault(m => m.Id==id);
+            return _context.UnProcessedRequests.SingleOrDefaultAsync(m => m.Id==id);
         }
     }
 }

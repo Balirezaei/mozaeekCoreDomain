@@ -1,4 +1,5 @@
-﻿using MozaeekCore.ApplicationService.Contract;
+﻿using System.Threading.Tasks;
+using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.QueryHandler;
 
 namespace MozaeekCore.Facade.Query
@@ -11,9 +12,9 @@ namespace MozaeekCore.Facade.Query
         {
             _queryProcessor = queryProcessor;
         }
-        public UnProcessedRequestDto GetProcessedRequestById(int id)
+        public Task<UnProcessedRequestDto> GetProcessedRequestById(int id)
         {
-            return _queryProcessor.Process<FindByKey, UnProcessedRequestDto>(new FindByKey(id));
+            return _queryProcessor.ProcessAsync<FindByKey, UnProcessedRequestDto>(new FindByKey(id));
         }
     }
 }
