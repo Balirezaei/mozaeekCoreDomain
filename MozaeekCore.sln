@@ -21,31 +21,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.LogManagement",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Mapper", "MozaeekCore.Mapper\MozaeekCore.Mapper.csproj", "{84843E80-1589-4E5D-B5B4-197958F3B2DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.RestAPI", "MozaeekCore.RestAPI\MozaeekCore.RestAPI.csproj", "{4B2F92DD-A93A-465A-B210-D2768167B644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.RestAPI", "MozaeekCore.RestAPI\MozaeekCore.RestAPI.csproj", "{4B2F92DD-A93A-465A-B210-D2768167B644}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B4DF5DBA-B85A-45F3-859D-BB9992C5B6EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Persistense.EF", "MozaeekCore.Persistense.EF\MozaeekCore.Persistense.EF.csproj", "{0AC1DE1A-FA04-4B6D-B385-86F4E84CD8CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Persistense.EF", "MozaeekCore.Persistense.EF\MozaeekCore.Persistense.EF.csproj", "{0AC1DE1A-FA04-4B6D-B385-86F4E84CD8CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Common", "MozaeekCore.Common\MozaeekCore.Common.csproj", "{9AD4F0DB-835E-4914-B801-83D968412881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Common", "MozaeekCore.Common\MozaeekCore.Common.csproj", "{9AD4F0DB-835E-4914-B801-83D968412881}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Domain", "MozaeekCore.Domain\MozaeekCore.Domain.csproj", "{6B07D17F-3F2F-4371-9906-4318D3895619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Domain", "MozaeekCore.Domain\MozaeekCore.Domain.csproj", "{6B07D17F-3F2F-4371-9906-4318D3895619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.ApplicationService", "MozaeekCore.ApplicationService\MozaeekCore.ApplicationService.csproj", "{6B0AF2EF-8017-480D-BD5F-AAA54A7920AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.ApplicationService", "MozaeekCore.ApplicationService\MozaeekCore.ApplicationService.csproj", "{6B0AF2EF-8017-480D-BD5F-AAA54A7920AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.ApplicationService.Contract", "MozaeekCore.ApplicationService.Contract\MozaeekCore.ApplicationService.Contract.csproj", "{7CD3945B-FE44-4209-9C49-7546FF3CF9D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.ApplicationService.Contract", "MozaeekCore.ApplicationService.Contract\MozaeekCore.ApplicationService.Contract.csproj", "{7CD3945B-FE44-4209-9C49-7546FF3CF9D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.IntegrationTest", "MozaeekCore.IntegrationTest\MozaeekCore.IntegrationTest.csproj", "{16CD6CD5-297F-4640-BC76-3BCA5C359819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.IntegrationTest", "MozaeekCore.IntegrationTest\MozaeekCore.IntegrationTest.csproj", "{16CD6CD5-297F-4640-BC76-3BCA5C359819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Specs", "MozaeekCore.Specs\MozaeekCore.Specs.csproj", "{6A94EAD4-F5F9-42A5-83CC-C19175E50B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Specs", "MozaeekCore.Specs\MozaeekCore.Specs.csproj", "{6A94EAD4-F5F9-42A5-83CC-C19175E50B25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Core", "MozaeekCore.Core\MozaeekCore.Core.csproj", "{9B777524-AE0C-4595-B846-5870A9FC27CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Core", "MozaeekCore.Core\MozaeekCore.Core.csproj", "{9B777524-AE0C-4595-B846-5870A9FC27CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FacadeQuery", "FacadeQuery", "{00D63373-F893-421D-A6A1-B6F23EAEF8FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Facade.Contract", "MozaeekCore.Facade.Contract\MozaeekCore.Facade.Contract.csproj", "{C3B93400-87FC-441C-8D52-6FCDAA2AE352}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Facade.Contract", "MozaeekCore.Facade.Contract\MozaeekCore.Facade.Contract.csproj", "{C3B93400-87FC-441C-8D52-6FCDAA2AE352}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Facade.Query", "MozaeekCore.Facade.Query\MozaeekCore.Facade.Query.csproj", "{BA9DB807-3706-4E92-B57E-90C84D09E045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MozaeekCore.Facade.Query", "MozaeekCore.Facade.Query\MozaeekCore.Facade.Query.csproj", "{BA9DB807-3706-4E92-B57E-90C84D09E045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MozaeekCore.Domain.Contract", "MozaeekCore.Domain.Contract\MozaeekCore.Domain.Contract.csproj", "{71239A80-09D3-4AE1-A571-3F9E0E24AD71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{BA9DB807-3706-4E92-B57E-90C84D09E045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA9DB807-3706-4E92-B57E-90C84D09E045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA9DB807-3706-4E92-B57E-90C84D09E045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71239A80-09D3-4AE1-A571-3F9E0E24AD71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71239A80-09D3-4AE1-A571-3F9E0E24AD71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71239A80-09D3-4AE1-A571-3F9E0E24AD71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71239A80-09D3-4AE1-A571-3F9E0E24AD71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +140,7 @@ Global
 		{00D63373-F893-421D-A6A1-B6F23EAEF8FD} = {B4DF5DBA-B85A-45F3-859D-BB9992C5B6EC}
 		{C3B93400-87FC-441C-8D52-6FCDAA2AE352} = {00D63373-F893-421D-A6A1-B6F23EAEF8FD}
 		{BA9DB807-3706-4E92-B57E-90C84D09E045} = {00D63373-F893-421D-A6A1-B6F23EAEF8FD}
+		{71239A80-09D3-4AE1-A571-3F9E0E24AD71} = {A94F9507-A0BA-4BB3-B6C6-6084DEF95AB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D367D0F-CDB4-4E7A-B90D-1E8D35FC291E}
