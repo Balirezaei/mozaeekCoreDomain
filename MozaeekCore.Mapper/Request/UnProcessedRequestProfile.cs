@@ -3,13 +3,17 @@ using MozaeekCore.Domain;
 
 namespace MozaeekCore.Mapper.Request
 {
-  
     public static class UnProcessedRequestMapping
     {
-        public static UnProcessedRequestDto GetOperatorsSelectList(this UnProcessedRequest domain)
+        public static UnProcessedRequestDto GetUnProcessedRequestDto(this UnProcessedRequest domain)
         {
-            var mapper = new AutoMapper.Mapper(new MapperConfiguration(v => { }));
-            return mapper.Map<UnProcessedRequestDto>(domain);
+            return new UnProcessedRequestDto
+            {
+                Id = domain.Id,
+                IsProcessed = domain.IsProcessed,
+                Summery = domain.Summery,
+                Title = domain.Title,
+            }; 
         }
     }
 }

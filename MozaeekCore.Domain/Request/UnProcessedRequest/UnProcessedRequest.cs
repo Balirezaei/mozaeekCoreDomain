@@ -1,5 +1,6 @@
 ﻿using System;
 using MozaeekCore.Core.Domain;
+using MozaeekCore.Domain.Contract.Request.Events;
 
 namespace MozaeekCore.Domain
 {
@@ -18,6 +19,8 @@ namespace MozaeekCore.Domain
             this.CreateDateTime = DateTime.Now;
             this.IsProcessed = false;
             //ToDo : Publish event in EventPublisher
+            new UnProcessedRequestCreated(Id, Title, Summery, IsProcessed);
         }
+
     }
 }

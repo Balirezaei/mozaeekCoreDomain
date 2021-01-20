@@ -2,6 +2,7 @@
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.QueryHandler;
 using MozaeekCore.Domain;
+using MozaeekCore.Mapper.Request;
 
 namespace MozaeekCore.ApplicationService.Query
 {
@@ -17,13 +18,7 @@ namespace MozaeekCore.ApplicationService.Query
         public async Task<UnProcessedRequestDto> HandleAsync(FindByKey query)
         {
             var res =await _unProcessedRequestRepository.Find(query.Id);
-            return new UnProcessedRequestDto()
-            {
-                Title = res.Title,
-                Summery = res.Summery,
-                IsProcessed = res.IsProcessed,
-                Id = res.Id
-            };
+            return res.GetUnProcessedRequestDto();
         }
     }
 }
