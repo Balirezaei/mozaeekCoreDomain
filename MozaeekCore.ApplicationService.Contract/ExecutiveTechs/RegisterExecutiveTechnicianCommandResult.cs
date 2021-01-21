@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MozaeekCore.ApplicationService.Contract.ExecutiveTechs
+namespace MozaeekCore.ApplicationService.Contract
 {
     public class RegisterExecutiveTechnicianCommandResult
     {

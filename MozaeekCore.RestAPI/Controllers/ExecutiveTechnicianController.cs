@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using MozaeekCore.ApplicationService.Contract.ExecutiveTechs;
+﻿using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.Core.CommandBus;
 using MozaeekCore.Facade.Query.ExecutiveTechs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using MozaeekCore.ApplicationService.Contract;
 
 namespace MozaeekCore.RestAPI.Controllers
 {
@@ -29,9 +25,9 @@ namespace MozaeekCore.RestAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(RegisterExecutiveTechnicianCommand command)
+        public async Task<IActionResult> Create(CreateRegisterExecutiveTechnicianCommand command)
         {
-            var commandResult = await commandBus.DispatchAsync<RegisterExecutiveTechnicianCommand, RegisterExecutiveTechnicianCommandResult>(command);
+            var commandResult = await commandBus.DispatchAsync<CreateRegisterExecutiveTechnicianCommand, RegisterExecutiveTechnicianCommandResult>(command);
             return CreatedAtAction(nameof(GetById), new { id = commandResult.Id }, commandResult.Id);
         }
 

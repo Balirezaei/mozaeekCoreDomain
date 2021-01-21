@@ -4,6 +4,7 @@ using MozaeekCore.Core.CommandBus;
 using MozaeekCore.Core.CommandHandler;
 using MozaeekCore.Core.QueryHandler;
 using MozaeekCore.Domain;
+using MozaeekCore.Domain.BasicInfo.Repository;
 using MozaeekCore.Domain.ExecutiveTechs;
 using MozaeekCore.LogManagement;
 using MozaeekCore.Persistense.EF;
@@ -26,7 +27,7 @@ namespace MozaeekCore.RestAPI.Bootstrap
             services.AddSingleton<ICommandBus, CommandBus>();
             services.AddScoped<IQueryProcessor, QueryProcessor>();
             services.AddScoped<IUnitOfWork, EFUnitOfWork>();
-            
+            services.AddScoped( typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUnProcessedRequestRepository, UnProcessedRequestRepository>();
             services.AddScoped<IExecutiveTechnicianRepository, ExecutiveTechnicianRepository>();
             // services.AddScoped<IUnProcessedRequestQueryFacade, UnProcessedRequestQueryFacade>();

@@ -1,5 +1,4 @@
 ﻿using MozaeekCore.ApplicationService.Contract;
-using MozaeekCore.ApplicationService.Contract.ExecutiveTechs;
 using MozaeekCore.Core.QueryHandler;
 using System;
 using System.Collections.Generic;

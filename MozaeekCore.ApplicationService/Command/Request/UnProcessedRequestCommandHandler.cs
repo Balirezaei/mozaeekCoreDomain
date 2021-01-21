@@ -1,11 +1,12 @@
-﻿using MozaeekCore.ApplicationService.Contract;
+﻿using System.Threading.Tasks;
+using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core;
 using MozaeekCore.Core.CommandHandler;
 using MozaeekCore.Domain;
 
-namespace MozaeekCore.ApplicationService
+namespace MozaeekCore.ApplicationService.Command
 {
-    public class UnProcessedRequestCommandHandler : IBaseCommandHandler<UnProcessedRequestCommand, UnProcessedRequestCommandResult>
+    public class UnProcessedRequestCommandHandler : IBaseAsyncCommandHandler<CreateUnProcessedRequestCommand, UnProcessedRequestCommandResult>
     {
 
         private readonly IUnProcessedRequestRepository _unProcessedRequestRepository;
@@ -16,11 +17,11 @@ namespace MozaeekCore.ApplicationService
             _unProcessedRequestRepository = unProcessedRequestRepository;
             _unitOfWork = unitOfWork;
         }
-        public UnProcessedRequestCommandResult Handle(UnProcessedRequestCommand cmd)
+        public async Task<UnProcessedRequestCommandResult> HandleAsync(CreateUnProcessedRequestCommand cmd)
         {
             var unProcessedRequest = new UnProcessedRequest(cmd.Title, cmd.Summery);
             _unProcessedRequestRepository.Add(unProcessedRequest);
-            _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return new UnProcessedRequestCommandResult()
             {
                 Id = unProcessedRequest.Id

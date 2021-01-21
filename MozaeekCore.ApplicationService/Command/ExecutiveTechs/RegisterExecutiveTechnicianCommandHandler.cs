@@ -1,15 +1,12 @@
-﻿using MozaeekCore.ApplicationService.Contract.ExecutiveTechs;
-using MozaeekCore.Core;
+﻿using MozaeekCore.Core;
 using MozaeekCore.Core.CommandHandler;
 using MozaeekCore.Domain.ExecutiveTechs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using MozaeekCore.ApplicationService.Contract;
 
-namespace MozaeekCore.ApplicationService.Command.ExecutiveTechs
+namespace MozaeekCore.ApplicationService.Command
 {
-    public class RegisterExecutiveTechnicianCommandHandler : IBaseAsyncCommandHandler<RegisterExecutiveTechnicianCommand, RegisterExecutiveTechnicianCommandResult>
+    public class RegisterExecutiveTechnicianCommandHandler : IBaseAsyncCommandHandler<CreateRegisterExecutiveTechnicianCommand, RegisterExecutiveTechnicianCommandResult>
     {
         private readonly IExecutiveTechnicianRepository repository;
         private readonly IUnitOfWork unitOfWork;
@@ -20,7 +17,7 @@ namespace MozaeekCore.ApplicationService.Command.ExecutiveTechs
             this.unitOfWork = unitOfWork;
         }
 
-        public async Task<RegisterExecutiveTechnicianCommandResult> HandleAsync(RegisterExecutiveTechnicianCommand cmd)
+        public async Task<RegisterExecutiveTechnicianCommandResult> HandleAsync(CreateRegisterExecutiveTechnicianCommand cmd)
         {
             var executiveTechnician = new ExecutiveTechnician(cmd.FirstName, cmd.LastName,cmd.NationalCode);
             repository.Add(executiveTechnician);

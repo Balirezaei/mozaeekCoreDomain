@@ -31,9 +31,9 @@ namespace MozaeekCore.RestAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(UnProcessedRequestCommand command)
+        public IActionResult Create(CreateUnProcessedRequestCommand command)
         {
-            var commandResult = _commandBus.Dispatch<UnProcessedRequestCommand, UnProcessedRequestCommandResult>(command);
+            var commandResult = _commandBus.Dispatch<CreateUnProcessedRequestCommand, UnProcessedRequestCommandResult>(command);
             return CreatedAtAction(nameof(GetById), new { id = commandResult.Id }, commandResult.Id);
         }
 

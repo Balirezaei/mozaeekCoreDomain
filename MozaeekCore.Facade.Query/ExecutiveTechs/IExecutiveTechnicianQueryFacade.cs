@@ -1,8 +1,5 @@
-﻿using MozaeekCore.ApplicationService.Contract.ExecutiveTechs;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using MozaeekCore.ApplicationService.Contract;
 
 namespace MozaeekCore.Facade.Query.ExecutiveTechs
 {

@@ -2,7 +2,7 @@
 
 namespace MozaeekCore.ApplicationService.Contract
 {
-    public class UnProcessedRequestCommand: Command
+    public class CreateUnProcessedRequestCommand: Command
     {
         public string Title { get; set; }
         public string Summery { get; set; }

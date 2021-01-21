@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MozaeekCore.ApplicationService;
-using MozaeekCore.ApplicationService.Command.ExecutiveTechs;
+using MozaeekCore.ApplicationService.Command;
 using MozaeekCore.ApplicationService.Contract;
-using MozaeekCore.ApplicationService.Contract.ExecutiveTechs;
 using MozaeekCore.Core.CommandHandler;
 
 namespace MozaeekCore.RestAPI.Bootstrap
@@ -11,8 +10,14 @@ namespace MozaeekCore.RestAPI.Bootstrap
     {
         public static IServiceCollection AddCommandHandlerServices(this IServiceCollection services)
         {
-            services.AddScoped<IBaseCommandHandler<UnProcessedRequestCommand, UnProcessedRequestCommandResult>, UnProcessedRequestCommandHandler>();
-            services.AddScoped<IBaseAsyncCommandHandler<RegisterExecutiveTechnicianCommand, RegisterExecutiveTechnicianCommandResult>, RegisterExecutiveTechnicianCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateUnProcessedRequestCommand, UnProcessedRequestCommandResult>, UnProcessedRequestCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateRegisterExecutiveTechnicianCommand, RegisterExecutiveTechnicianCommandResult>, RegisterExecutiveTechnicianCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateLableCommand, CreateLableCommandResult>, CreateLableCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateRequestOrgCommand, CreateRequestOrgCommandResult>, CreateRequestOrgCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateSubjectCommand, CreateSubjectCommandResult>, CreateSubjectCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateRequestActCommand, CreateRequestActCommandResult>, CreateRequestActCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreatePointCommand, CreatePointCommandResult>, CreatePointCommandHandler>();
+            services.AddScoped<IBaseAsyncCommandHandler<CreateRequestTargetCommand, CreateRequestTargetCommandResult>, CreateRequestTargetCommandHandler>();
 
             return services;
         }

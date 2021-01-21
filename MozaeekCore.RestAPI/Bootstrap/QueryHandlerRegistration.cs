@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MozaeekCore.ApplicationService;
 using MozaeekCore.ApplicationService.Contract;
-using MozaeekCore.ApplicationService.Contract.ExecutiveTechs;
 using MozaeekCore.ApplicationService.Query;
 using MozaeekCore.Core.QueryHandler;
 using MozaeekCore.Facade.Query;

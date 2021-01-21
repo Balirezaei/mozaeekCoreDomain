@@ -17,7 +17,6 @@ namespace MozaeekCore.Core.CommandBus
         {
             IBaseCommandHandler<T, TResult> handler = null;
             handler = (IBaseCommandHandler<T, TResult>)services.GetService((typeof(AuthorizeCommandHandlerDecorator<T, TResult>)));
-            //            handler = (IBaseCommandHandler<T, TResult>)services.GetService((typeof(LoggingHandlerDecorator<T, TResult>)));
             var logManagement = (ILogManagement)services.GetService(typeof(ILogManagement));
             handler = new CatchErrorCommandHandlerDecorator<T, TResult>(new LoggingHandlerDecorator<T, TResult>(handler, logManagement));
             return handler.Handle(command);
@@ -27,7 +26,6 @@ namespace MozaeekCore.Core.CommandBus
         {
             IBaseAsyncCommandHandler<T, TResult> handler = null;
             handler = (IBaseAsyncCommandHandler<T, TResult>)services.GetService((typeof(AuthorizeCommandAsyncHandlerDecorator<T, TResult>)));
-            //            handler = (IBaseCommandHandler<T, TResult>)services.GetService((typeof(LoggingHandlerDecorator<T, TResult>)));
             var logManagement = (ILogManagement)services.GetService(typeof(ILogManagement));
             handler = new CatchErrorCommandHandlerDecorator<T, TResult>(new AsyncLoggingHandlerDecorator<T, TResult>(handler, logManagement));
             return handler.HandleAsync(command);
