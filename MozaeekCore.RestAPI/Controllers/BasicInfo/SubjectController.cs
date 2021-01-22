@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.CommandBus;
+using MozaeekCore.Facade.Query;
 
 namespace MozaeekCore.RestAPI.Controllers.BasicInfo
 {
@@ -10,17 +11,18 @@ namespace MozaeekCore.RestAPI.Controllers.BasicInfo
     public class SubjectController : ControllerBase
     {
         private readonly ICommandBus _commandBus;
+        private readonly ISubjectQueryFacade _subjectQueryFacade;
 
-        public SubjectController(ICommandBus commandBus)
+        public SubjectController(ICommandBus commandBus, ISubjectQueryFacade subjectQueryFacade)
         {
             this._commandBus = commandBus;
+            _subjectQueryFacade = subjectQueryFacade;
         }
 
-
         [HttpGet]
-        public async Task<int> GetById(int id)
+        public Task<SubjectDto> GetById(long id)
         {
-            return id;
+            return _subjectQueryFacade.GetSubjectById(id);
         }
 
         [HttpPost]

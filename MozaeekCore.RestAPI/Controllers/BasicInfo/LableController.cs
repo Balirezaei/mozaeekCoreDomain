@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.CommandBus;
+using MozaeekCore.Facade.Query;
 
 namespace MozaeekCore.RestAPI.Controllers.BasicInfo
 {
@@ -14,17 +15,19 @@ namespace MozaeekCore.RestAPI.Controllers.BasicInfo
     public class LableController : ControllerBase
     {
         private readonly ICommandBus _commandBus;
+        private readonly ILableQueryFacade _lableQueryFacade;
 
-        public LableController(ICommandBus commandBus)
+        public LableController(ICommandBus commandBus, ILableQueryFacade lableQueryFacade)
         {
             this._commandBus = commandBus;
+            _lableQueryFacade = lableQueryFacade;
         }
 
 
         [HttpGet]
-        public async Task<int> GetById(int id)
+        public Task<LableDto> GetById(long id)
         {
-            return id;
+            return _lableQueryFacade.GetLableById(id);
         }
 
         [HttpPost]

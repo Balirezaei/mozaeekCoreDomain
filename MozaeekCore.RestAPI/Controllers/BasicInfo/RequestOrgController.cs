@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.CommandBus;
+using MozaeekCore.Facade.Query;
 
 namespace MozaeekCore.RestAPI.Controllers.BasicInfo
 {
@@ -10,17 +11,18 @@ namespace MozaeekCore.RestAPI.Controllers.BasicInfo
     public class RequestOrgController : ControllerBase
     {
         private readonly ICommandBus _commandBus;
+        private readonly IRequestOrgQueryFacade _requestOrgQueryFacade;
 
-        public RequestOrgController(ICommandBus commandBus)
+        public RequestOrgController(ICommandBus commandBus, IRequestOrgQueryFacade requestOrgQueryFacade)
         {
             this._commandBus = commandBus;
+            _requestOrgQueryFacade = requestOrgQueryFacade;
         }
-
-
+        
         [HttpGet]
-        public async Task<int> GetById(int id)
+        public Task<RequestOrgDto> GetById(long id)
         {
-            return id;
+            return _requestOrgQueryFacade.GetRequestOrgById(id);
         }
 
         [HttpPost]

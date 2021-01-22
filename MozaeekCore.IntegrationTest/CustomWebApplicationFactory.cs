@@ -44,27 +44,27 @@ namespace MozaeekCore.IntegrationTest
                 services.AddCommandHandlerServices();
                 services.AddQueryHandlerServices();
                 services.AddAuthorizationServices(configuration);
-                var sp = services.BuildServiceProvider();
+                // var sp = services.BuildServiceProvider();
 
-                using (var scope = sp.CreateScope())
-                {
-                    var scopedServices = scope.ServiceProvider;
-                    var db = scopedServices.GetRequiredService<CoreDomainContext>();
-                    var logger = scopedServices
-                        .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
-
-                    db.Database.EnsureCreated();
-
-                    try
-                    {
-                        //Utilities.InitializeDbForTests(db);
-                    }
-                    catch (Exception ex)
-                    {
-                        logger.LogError(ex, "An error occurred seeding the " +
-                                            "database with test messages. Error: {Message}", ex.Message);
-                    }
-                }
+                // using (var scope = sp.CreateScope())
+                // {
+                //     var scopedServices = scope.ServiceProvider;
+                //     var db = scopedServices.GetRequiredService<CoreDomainContext>();
+                //     var logger = scopedServices
+                //         .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
+                //
+                //     db.Database.EnsureCreated();
+                //
+                //     try
+                //     {
+                //         //Utilities.InitializeDbForTests(db);
+                //     }
+                //     catch (Exception ex)
+                //     {
+                //         logger.LogError(ex, "An error occurred seeding the " +
+                //                             "database with test messages. Error: {Message}", ex.Message);
+                //     }
+                // }
             });
         }
 

@@ -1,4 +1,6 @@
-﻿namespace MozaeekCore.Domain.BasicInfo.Repository
+﻿using System.Threading.Tasks;
+
+namespace MozaeekCore.Domain.BasicInfo.Repository
 {
     public interface IGenericRepository<T>
     {
@@ -6,7 +8,9 @@
 
         void Delete(T entity);
 
-        
+        Task<T> Find(long id);
+
+
 
     }
 }

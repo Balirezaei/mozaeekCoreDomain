@@ -6,9 +6,8 @@ namespace MozaeekCore.Domain.BasicInfo
     /// نقاط
     /// خراسان رضوی/کاشمر/ریوش
     /// </summary>
-    public class Point: IBasicInfo
+    public class Point: BasicInfo
     {
-        public long Id { get;private set; }
         public string Title { get; private set; }
         public long? ParentId { get; private set; }
         public virtual Point Parent { get; private set; }

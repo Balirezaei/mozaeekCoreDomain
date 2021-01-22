@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.Core.CommandBus;
-using MozaeekCore.Facade.Query.ExecutiveTechs;
+using MozaeekCore.Facade.Query;
 using System.Threading.Tasks;
 using MozaeekCore.ApplicationService.Contract;
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.CommandBus;
+using MozaeekCore.Facade.Query;
 
 namespace MozaeekCore.RestAPI.Controllers.BasicInfo
 {
@@ -10,17 +11,18 @@ namespace MozaeekCore.RestAPI.Controllers.BasicInfo
     public class PointController : ControllerBase
     {
         private readonly ICommandBus _commandBus;
+        private readonly IPointQueryFacade _pointQueryFacade;
 
-        public PointController(ICommandBus commandBus)
+        public PointController(ICommandBus commandBus, IPointQueryFacade pointQueryFacade)
         {
-            this._commandBus = commandBus;
+            _commandBus = commandBus;
+            _pointQueryFacade = pointQueryFacade;
         }
 
-
         [HttpGet]
-        public async Task<int> GetById(int id)
+        public Task<PointDto> GetById(long id)
         {
-            return id;
+            return _pointQueryFacade.GetPointById(id);
         }
 
         [HttpPost]

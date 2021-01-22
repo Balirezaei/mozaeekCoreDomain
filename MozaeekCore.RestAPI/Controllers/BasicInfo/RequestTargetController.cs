@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.CommandBus;
+using MozaeekCore.Facade.Query;
 
 namespace MozaeekCore.RestAPI.Controllers.BasicInfo
 {
@@ -10,17 +11,19 @@ namespace MozaeekCore.RestAPI.Controllers.BasicInfo
     public class RequestTargetController : ControllerBase
     {
         private readonly ICommandBus _commandBus;
+        private readonly IRequestTargetQueryFacade _requestTargetQueryFacade;
 
-        public RequestTargetController(ICommandBus commandBus)
+        public RequestTargetController(ICommandBus commandBus, IRequestTargetQueryFacade requestTargetQueryFacade)
         {
             this._commandBus = commandBus;
+            _requestTargetQueryFacade = requestTargetQueryFacade;
         }
 
 
         [HttpGet]
-        public async Task<int> GetById(int id)
+        public  Task<RequestTargetDto> GetById(long id)
         {
-            return id;
+            return _requestTargetQueryFacade.GetRequestTargetById(id);
         }
 
         [HttpPost]

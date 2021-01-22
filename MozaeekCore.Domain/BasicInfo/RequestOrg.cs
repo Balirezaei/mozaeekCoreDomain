@@ -6,9 +6,8 @@ namespace MozaeekCore.Domain.BasicInfo
     /// خواستگاه
     /// وزارت صنعت و معدن
     /// </summary>
-    public class RequestOrg: IBasicInfo
+    public class RequestOrg: BasicInfo
     {
-        public long Id { get;private set; }
         public string Title { get; private set; }
         public long? ParentId { get; private set; }
         public virtual RequestOrg Parent { get; private set; }

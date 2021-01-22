@@ -18,7 +18,7 @@ namespace MozaeekCore.Persistense.EF.Repository
             _context.UnProcessedRequests.AddAsync(unProcessedRequest);
         }
 
-        public Task<UnProcessedRequest> Find(int id)
+        public Task<UnProcessedRequest> Find(long id)
         {
             return _context.UnProcessedRequests.SingleOrDefaultAsync(m => m.Id==id);
         }

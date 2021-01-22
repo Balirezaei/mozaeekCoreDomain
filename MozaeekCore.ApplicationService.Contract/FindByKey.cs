@@ -4,11 +4,11 @@ namespace MozaeekCore.ApplicationService.Contract
 {
     public class FindByKey : Query
     {
-        public FindByKey(int id)
+        public FindByKey(long id)
         {
             Id = id;
         }
 
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
 }

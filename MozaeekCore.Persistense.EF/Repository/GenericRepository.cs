@@ -1,8 +1,11 @@
-﻿using MozaeekCore.Domain.BasicInfo.Repository;
+﻿using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using MozaeekCore.Domain.BasicInfo;
+using MozaeekCore.Domain.BasicInfo.Repository;
 
 namespace MozaeekCore.Persistense.EF.Repository
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : BasicInfo
     {
         private readonly CoreDomainContext _context;
 
@@ -18,6 +21,11 @@ namespace MozaeekCore.Persistense.EF.Repository
         public void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
+        }
+
+        public Task<T> Find(long id)
+        {
+            return _context.Set<T>().FirstOrDefaultAsync(m => m.Id == id);
         }
     }
 }

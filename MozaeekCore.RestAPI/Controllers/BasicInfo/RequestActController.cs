@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Core.CommandBus;
+using MozaeekCore.Domain.BasicInfo;
+using MozaeekCore.Facade.Query;
 
 namespace MozaeekCore.RestAPI.Controllers.BasicInfo
 {
@@ -10,17 +12,18 @@ namespace MozaeekCore.RestAPI.Controllers.BasicInfo
     public class RequestActController : ControllerBase
     {
         private readonly ICommandBus _commandBus;
+        private readonly IRequestActQueryFacade _requestActQueryFacade;
 
-        public RequestActController(ICommandBus commandBus)
+        public RequestActController(ICommandBus commandBus, IRequestActQueryFacade requestActQueryFacade)
         {
             this._commandBus = commandBus;
+            _requestActQueryFacade = requestActQueryFacade;
         }
-
-
+        
         [HttpGet]
-        public async Task<int> GetById(int id)
+        public Task<RequestActDto> GetById(long id)
         {
-            return id;
+            return _requestActQueryFacade.GetRequestActById(id);
         }
 
         [HttpPost]

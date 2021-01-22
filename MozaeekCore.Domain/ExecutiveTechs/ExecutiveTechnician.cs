@@ -18,7 +18,7 @@ namespace MozaeekCore.Domain.ExecutiveTechs
             this.NationalCode = nationalCode;
             CreateDateTime = DateTime.Now;
         }
-        public int Id { get; set; }
+        public long Id { get; set; }
         public DateTime CreateDateTime { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

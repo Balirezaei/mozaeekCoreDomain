@@ -20,7 +20,7 @@ namespace MozaeekCore.Persistense.EF.Repository
              _context.Add(executiveTechnician);
         }
 
-        public Task<ExecutiveTechnician> Find(int id)
+        public Task<ExecutiveTechnician> Find(long id)
         {
             return _context.ExecutiveTechnicians.SingleOrDefaultAsync(m => m.Id == id);
         }

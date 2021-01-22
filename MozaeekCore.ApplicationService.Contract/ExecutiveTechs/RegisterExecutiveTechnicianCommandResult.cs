@@ -6,6 +6,6 @@ namespace MozaeekCore.ApplicationService.Contract
 {
     public class RegisterExecutiveTechnicianCommandResult
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
     }
 }

@@ -5,6 +5,6 @@ namespace MozaeekCore.Domain
     public interface IUnProcessedRequestRepository
     {
         void Add(UnProcessedRequest unProcessedRequest);
-        Task<UnProcessedRequest> Find(int id);
+        Task<UnProcessedRequest> Find(long id);
     }
 }

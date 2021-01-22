@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MozaeekCore.Facade.Query.ExecutiveTechs
+namespace MozaeekCore.Facade.Query
 {
     public class ExecutiveTechnicianQueryFacade: IExecutiveTechnicianQueryFacade
     {

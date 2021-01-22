@@ -1,7 +1,7 @@
 ﻿namespace MozaeekCore.Domain.BasicInfo
 {
-    public interface IBasicInfo
+    public class BasicInfo
     {
-        
+        public long Id { get;private set; }
     }
 }

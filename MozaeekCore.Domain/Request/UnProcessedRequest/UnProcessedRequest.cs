@@ -7,7 +7,7 @@ namespace MozaeekCore.Domain
     public class UnProcessedRequest: AggregateRootBase
     {
         public DateTime CreateDateTime { get; private set; }
-        public int Id { get; private set; }
+        public long Id { get; private set; }
         public string Title { get; private set; }
         public string Summery { get; private set; }
         public bool IsProcessed { get; private set; }

@@ -8,6 +8,6 @@ namespace MozaeekCore.Domain.ExecutiveTechs
     public interface IExecutiveTechnicianRepository
     {
         void Add(ExecutiveTechnician executiveTechnician);
-        Task<ExecutiveTechnician> Find(int id);
+        Task<ExecutiveTechnician> Find(long id);
     }
 }

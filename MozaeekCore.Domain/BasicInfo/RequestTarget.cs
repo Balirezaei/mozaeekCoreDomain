@@ -4,9 +4,8 @@
     /// کارمراد
     /// کارت ملی/کارت بازرگانی/گواهینامه
     /// </summary>
-    public class RequestTarget : IBasicInfo
+    public class RequestTarget : BasicInfo
     {
-        public long Id { get; private set; }
         public string Title { get; private set; }
 
         public RequestTarget(string title)

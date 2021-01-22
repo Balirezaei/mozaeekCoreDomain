@@ -7,9 +7,8 @@ namespace MozaeekCore.Domain.BasicInfo
     /// تحصیلات/دانشگاهی/کارشناسی
     /// وضعیت شغلی/شاغل/آزاد
     /// </summary>
-    public class Lable: IBasicInfo
+    public class Lable: BasicInfo
     {
-        public long Id { get; private set; }
         public string Title { get; private set; }
         public long? ParentId { get; private set; }
         public virtual Lable Parent { get; private set; }
