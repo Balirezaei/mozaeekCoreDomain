@@ -14,6 +14,9 @@ using MozaeekCore.ApplicationService.Contract;
 using MozaeekCore.Persistense.EF;
 using MozaeekCore.RestAPI.Bootstrap;
 using MozaeekCore.RestAPI.Utility;
+using MozaeekCore.RestAPI.Extensions;
+using MozaeekCore.Core.MessageBus;
+using MozaeekCore.Messaging.RabbitMQ;
 
 namespace MozaeekCore.RestAPI
 {
@@ -39,13 +42,15 @@ namespace MozaeekCore.RestAPI
             services.AddFrameworkServices();
             services.AddCommandHandlerServices();
             services.AddQueryHandlerServices();
-            services.AddAuthorizationServices(this.Configuration);
+            services.AddAuthorizationServices(Configuration);
+            services.ConfigureMassTransit(Configuration);
 
             services.AddDbContext<CoreDomainContext>(options =>
                 options.UseInMemoryDatabase(databaseName: "CoreDomainContext"));
             
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IMessagePublisher, MassTransitMqPublisher>();
             services.AddControllers();
             services.AddScoped<CurrentUser>(provider =>
             {
