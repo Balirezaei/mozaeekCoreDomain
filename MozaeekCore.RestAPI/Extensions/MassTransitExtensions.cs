@@ -19,7 +19,7 @@ namespace MozaeekCore.RestAPI.Extensions
 
             services.AddMassTransit(x =>
             {
-                x.AddConsumers(Assembly.GetExecutingAssembly());
+              //  x.AddConsumers(Assembly.GetExecutingAssembly());
                 x.SetKebabCaseEndpointNameFormatter();
                 x.UsingRabbitMq((context, cfg) =>
                 {
