@@ -14,5 +14,9 @@
     <ProjectReference Include="..\MozaeekCore.Messaging.RabbitMQ\MozaeekCore.Messaging.RabbitMQ.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 
 </Project>

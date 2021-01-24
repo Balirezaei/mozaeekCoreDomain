@@ -1,22 +1,20 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System.Linq;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using MozaeekCore.ApplicationService.Contract;
-using MozaeekCore.Persistense.EF;
-using MozaeekCore.RestAPI.Bootstrap;
-using MozaeekCore.RestAPI.Utility;
-using MozaeekCore.RestAPI.Extensions;
 using MozaeekCore.Core.MessageBus;
 using MozaeekCore.Messaging.RabbitMQ;
+using MozaeekCore.Persistense.EF;
+using MozaeekCore.RestAPI.Bootstrap;
+using MozaeekCore.RestAPI.Extensions;
+using MozaeekCore.RestAPI.Utility;
+using System.Linq;
+using System.Security.Claims;
 
 namespace MozaeekCore.RestAPI
 {
@@ -47,7 +45,7 @@ namespace MozaeekCore.RestAPI
 
             services.AddDbContext<CoreDomainContext>(options =>
                 options.UseInMemoryDatabase(databaseName: "CoreDomainContext"));
-            
+
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IMessagePublisher, MassTransitMqPublisher>();
