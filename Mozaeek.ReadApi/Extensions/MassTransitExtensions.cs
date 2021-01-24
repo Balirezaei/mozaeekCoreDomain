@@ -1,7 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Mozaeek.ReadApi.Consumers.ExecutiveTechnician;
 using MozaeekCore.Messaging.RabbitMQ;
 using System.Reflection;
 
