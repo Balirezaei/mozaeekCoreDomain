@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mozaeek.ReadApi.Sync\Mozaeek.ReadApi.Sync.csproj" />
+    <ProjectReference Include="..\MozaeekCore.Domain.Contract\MozaeekCore.Domain.Contract.csproj" />
     <ProjectReference Include="..\MozaeekCore.Messaging.RabbitMQ\MozaeekCore.Messaging.RabbitMQ.csproj" />
   </ItemGroup>
 

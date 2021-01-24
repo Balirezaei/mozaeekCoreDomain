@@ -1,13 +1,9 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Mozaeek.ReadApi.Sync.Consumers.ExecutiveTechnician;
+using Mozaeek.ReadApi.Consumers.ExecutiveTechnician;
 using MozaeekCore.Messaging.RabbitMQ;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Mozaeek.ReadApi.Extensions
 {
@@ -20,7 +16,7 @@ namespace Mozaeek.ReadApi.Extensions
 
             services.AddMassTransit(x =>
             {
-                x.AddConsumers(Assembly.GetAssembly(typeof(ExecutiveTechnicianRegisteredConsumer)));
+                x.AddConsumers(Assembly.GetExecutingAssembly());
                 x.SetKebabCaseEndpointNameFormatter();
                 x.UsingRabbitMq((context, cfg) =>
                 {
